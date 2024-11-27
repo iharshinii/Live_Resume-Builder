@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Resume Builder</h1>
+        </header>
+        <main>
+            <section class="form-section">
+                <form id="resumeForm">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+
+                    <label for="profile">Profile Summary:</label>
+                    <textarea id="profile" name="profile" placeholder="Brief Summary"></textarea>
+
+                    <label>Education:</label>
+                    <div id="educationContainer">
+                        <div class="education-row">
+                            <input type="text" placeholder="Institution" name="institution[]">
+                            <input type="text" placeholder="Degree" name="degree[]">
+                            <input type="text" placeholder="Year" name="year[]">
+                            <button type="button" class="removeRow">Remove</button>
+                        </div>
+                    </div>
+                    <button type="button" id="addEducation">Add Education</button>
+
+                    <label>Skills:</label>
+                    <div class="skills-container">
+                        <input type="checkbox" id="skill1" value="HTML"> <label for="skill1">HTML</label>
+                        <input type="checkbox" id="skill2" value="CSS"> <label for="skill2">CSS</label>
+                        <input type="checkbox" id="skill3" value="JavaScript"> <label for="skill3">JavaScript</label>
+                        <!-- Add more skill checkboxes as needed -->
+                    </div>
+
+                    <label>Experience:</label>
+                    <div id="experienceContainer">
+                        <div class="experience-row">
+                            <input type="text" placeholder="Company" name="company[]">
+                            <input type="text" placeholder="Role" name="role[]">
+                            <textarea placeholder="Description" name="description[]"></textarea>
+                            <button type="button" class="removeRow">Remove</button>
+                        </div>
+                    </div>
+                    <div class="progress-container">
+                        <div id="progressBar"></div>
+                    </div>
+                    
+                    <button type="button" id="addExperience">Add Experience</button>
+
+                    <button type="reset" id="clearForm">Clear Form</button>
+                </form>
+            </section>
+
+            <section class="preview-section">
+                <h2>Live Resume Preview</h2>
+                <div id="resumePreview">
+                    <!-- Real-time updates will be displayed here -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
